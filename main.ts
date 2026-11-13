@@ -107,7 +107,7 @@ function forecast(m: CaseMarket, horizon: number): number[][] {
   ema /= w;
 
   // Anchor the level on the last price: keep only part of the EMA's distance.
-  const rho = 0.5;
+  const rho = 0.3;
   const level = last + rho * (ema - last);
 
   // Mean-reversion center: blend level with last by the vol-dependent shrink.
